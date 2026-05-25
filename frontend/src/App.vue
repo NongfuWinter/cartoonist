@@ -8,9 +8,6 @@ const password = ref('')
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
-  timer = setInterval(() => {
-    console.log(password.value)
-  }, 1000)
 })
 
 onUnmounted(() => {
@@ -141,12 +138,6 @@ function onLeave(_: any, done: any) {
 </template>
 
 <style scoped lang="css">
-:deep(.el-input),
-:deep(.el-input__inner),
-:deep(.el-textarea__inner) {
-  font-size: 16px;
-}
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity .5s;
