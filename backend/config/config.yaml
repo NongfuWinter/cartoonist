@@ -1,13 +1,13 @@
-# 本地配置示例：在本目录复制为 config.yaml 后按需填写。
+# 配置示例（可提交仓库）。本地开发请复制为 config.local.yaml 后填写真实值。
 #
-# 加载规则（见同目录 config.go）：
-#   - 默认读取「当前工作目录」下的 internal/config/config.yaml。
-#     建议在 backend 模块根目录执行启动（如在 backend/ 下 go run ./cmd/server），或设置 CONFIG_PATH。
-#   - CONFIG_PATH=/绝对路径/custom.yaml：必须存在且格式正确。
+# 加载规则（见 internal/config/config.go）：
+#   - 默认读取「当前工作目录」下的 config/config.local.yaml（不存在则仅用环境变量 / 内置默认）。
+#     建议在 backend 目录启动：go run ./cmd/server
+#   - CONFIG_PATH 可指向任意 YAML（此时文件必须存在且格式正确）。
 #
-# 环境变量 PORT、MYSQL_DSN 会覆盖本文件中的同名项。
+# 环境变量 PORT、MYSQL_DSN 会覆盖 YAML 中的同名项。
 #
 http_port: "8080"
 
-# MySQL 数据源（勿把真实密码提交仓库；生产可只用环境变量 MYSQL_DSN）
-mysql_dsn: "sf:4oPDG9A=sfg@tcp(127.0.0.1:3306)/cartoonist_db?charset=utf8mb4&parseTime=True&loc=Local"
+# MySQL 数据源（示例占位，勿填真实密码）
+mysql_dsn: "user:password@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&parseTime=True&loc=Local"

@@ -8,7 +8,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-const defaultConfigFile = "config/config.yaml"
+const defaultConfigFile = "config/config.local.yaml"
 
 // Config 全局配置（来自 YAML，并可被环境变量覆盖）。
 type Config struct {
@@ -21,7 +21,7 @@ type yamlConfig struct {
 	MySQLDSN string `yaml:"mysql_dsn"`
 }
 
-// Load 从可选 YAML 加载（默认路径 internal/config/config.yaml，或通过 CONFIG_PATH），再用环境变量覆盖。
+// Load 从可选 YAML 加载（默认路径 config/config.local.yaml，或通过 CONFIG_PATH），再用环境变量覆盖。
 func Load() Config {
 	raw, explicitPath, readErr := readYAMLBytes()
 	pathDesc := explicitPathOrDefault(explicitPath)
