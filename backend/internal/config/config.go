@@ -8,7 +8,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-const defaultConfigFile = "internal/config/config.yaml"
+const defaultConfigFile = "config/config.yaml"
 
 // Config 全局配置（来自 YAML，并可被环境变量覆盖）。
 type Config struct {

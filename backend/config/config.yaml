@@ -10,4 +10,4 @@
 http_port: "8080"
 
 # MySQL 数据源（勿把真实密码提交仓库；生产可只用环境变量 MYSQL_DSN）
-mysql_dsn: "user:password@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&parseTime=True&loc=Local"
+mysql_dsn: "sf:4oPDG9A=sfg@tcp(127.0.0.1:3306)/cartoonist_db?charset=utf8mb4&parseTime=True&loc=Local"
